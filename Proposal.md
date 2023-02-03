@@ -33,10 +33,10 @@ Working on
 #### Deadlines
 
 - [ ] Febuary 3   Wireframe/design mockup
-- [ ] Febuary 3   Simple vue app for testing
-- [ ] Febuary 8   djangoRest
-- [ ] Febuary 14  Homepage
-- [ ] Febuary 18  User creation/login/logout
+- [ ] Febuary 3   DjangoRest
+- [ ] Febuary 8   Simple vue app for testing
+- [ ] Febuary 14  User creation/login/logout
+- [ ] Febuary 18  Create Profiles
 - [ ] Febuary 20  Groups
 - [ ] Febuary 19  History
 - [ ] Febuary 20  Household
