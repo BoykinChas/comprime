@@ -4,6 +4,16 @@ from django.db.models.signals import post_save
 
 
 # Create your models here.
+class Specalist(models.Model):
+	name = models.CharField('Specalist/Dr', max_length=120)
+	address = models.CharField(max_length=300)
+	zip_code = models.CharField('Zip Code', max_length=15)
+	phone = models.CharField('Contact Phone', max_length=25, blank=True)
+	type = models.CharField('Specality', max_length=120)
+
+	def __str__(self):
+		return self.name
+
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
 

@@ -1,8 +1,13 @@
 from django.shortcuts import render, redirect
+from django.views.generic import DetailView
 from django.contrib import messages
 from.models import Profile
 
 # Create your views here.
+class ProfilePage(DetailView):
+    model = Profile
+    template_name = 'registration/user_profile.'
+
 def home(request):
     return render(request, 'home.html')
 
