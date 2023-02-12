@@ -8,7 +8,7 @@ from django.http import HttpResponseRedirect
 # Create your views here.
 def doctors(request):
     doctor_list = Doctor.objects.all()
-    return render(request, 'doc_list.html', {'doctor_list': doctor_list})
+    return render(request, 'doctors.html', {'doctor_list': doctor_list})
 
 
 

@@ -19,5 +19,5 @@ class DoctorForm(ModelForm):
 			'address': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Address'}),
 			'zip_code': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Zip Code'}),
 			'phone': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Phone'}),
-			'specialty': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Specaity'}),
+			'specialty': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Specailty'}),
 		}
