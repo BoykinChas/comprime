@@ -32,10 +32,10 @@ Working on
 ## Schedule
 #### Deadlines
 
-- [ ] Febuary 3   Wireframe/design mockup
-- [ ] Febuary 3   DjangoRest
+- [X] Febuary 3   Wireframe/design mockup
+- [X] Febuary 3   Django
 - [ ] Febuary 8   Simple vue app for testing
-- [ ] Febuary 14  User creation/login/logout
+- [X] Febuary 14  User creation/login/logout
 - [ ] Febuary 18  Create Profiles
 - [ ] Febuary 20  Groups
 - [ ] Febuary 19  History
