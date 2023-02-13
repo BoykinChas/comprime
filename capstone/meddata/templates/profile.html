@@ -1,6 +1,11 @@
 {% extends 'profile_base.html' %}
 {% block content %}
 
-<h1>Profile</h1>
+{% if profile %}
 
+<h3>{{ profile.user.username }}'s Profile</h3>
+
+<strong></strong>
+
+{% endif %}
 {% endblock %}

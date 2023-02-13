@@ -2,7 +2,7 @@
 
 {% block content %}
 
-    <h1>Doctors & Specialists</h1>
+    <h2>Doctors & Specialists</h2>
     <br/>
 
 {% for doctor in doctor_list %}
@@ -12,7 +12,7 @@
         {{ doctor.name }}
     </div>
     <div class="card-body">
-      <h5 class="card-title">Specialty: {{ doctor.specialty }}</h5>
+      <h6 class="card-title">Specialty: {{ doctor.specialty }}</h6>
       <p class="card-text"> 
         <strong>Address:</strong> {{ doctor.address }}<br/>
         <strong>Zip Code:</strong> {{ doctor.zip_code }}<br/>
