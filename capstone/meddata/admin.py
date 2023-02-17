@@ -1,9 +1,11 @@
 from django.contrib import admin
 from django.contrib.auth.models import User
-from .models import Profile 
+from .models import Profile, Doctor
 
 
 # Register your models here.
+admin.site.register(Doctor)
+
 # Add Profile info with user info
 class ProfileInline(admin.StackedInline):
     model = Profile
@@ -17,6 +19,7 @@ class UserAdmin(admin.ModelAdmin):
 
 # Unregister initial User 
 admin.site.unregister(User)
+
 
 # Rereegister User and profile
 admin.site.register(User, UserAdmin)

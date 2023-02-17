@@ -6,10 +6,11 @@ from .forms import DoctorForm
 from django.http import HttpResponseRedirect
 
 # Create your views here.
-def doctors(request):
-    doctor_list = Doctor.objects.all()
-    return render(request, 'doctors.html', {'doctor_list': doctor_list})
 
+
+def doctor(request):
+    doctor_list = Doctor.objects.all()
+    return render(request, 'doctor.html', {'doctor_list': doctor_list})
 
 
 def add_doctor(request):

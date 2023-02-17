@@ -1,11 +1,17 @@
 {% extends 'profile_base.html' %}
+
 {% block content %}
 
-{% if profile %}
+<div class="shadow p-4 mb-5 bg-body rounded">
+    {% if profile %}
 
-<h3>{{ profile.user.username }}'s Profile</h3>
+    <h3>{{ profile.user.username }}'s Profile</h3>
+    <br/><br/>
 
-<strong></strong>
+    {{ user.profile.bio }}
 
+    <strong></strong>
+    
+</div>
 {% endif %}
 {% endblock %}
