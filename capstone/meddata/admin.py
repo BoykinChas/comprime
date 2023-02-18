@@ -1,10 +1,12 @@
 from django.contrib import admin
 from django.contrib.auth.models import User
-from .models import Profile, Doctor
+from .models import Profile, Doctor, Milestone
 
 
 # Register your models here.
 admin.site.register(Doctor)
+admin.site.register(Milestone)
+
 
 # Add Profile info with user info
 class ProfileInline(admin.StackedInline):

@@ -6,6 +6,30 @@ from django.db.models.signals import post_save
 
 # Create your models here.
 
+YN_CHOICES=[
+   ('yes', 'Yes'),
+   ('not sure', 'Not Sure'),
+   ('not yet', 'Not Yet'),
+]
+
+class Milestone(models.Model):
+    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
+    calms = models.CharField('Calms down when spoken to or picked up', max_length=10, choices=YN_CHOICES, null=True)
+    looks = models.CharField('Looks at your face', max_length=10, choices=YN_CHOICES, null=True)
+    happy = models.CharField('Seems happy to see you when you walk up', max_length=10, choices=YN_CHOICES, null=True)
+    smiles = models.CharField('Smiles when you talk or smile to them', max_length=10, choices=YN_CHOICES, null=True)
+    sounds = models.CharField('Makes sounds other than crying', max_length=10, choices=YN_CHOICES, null=True)
+    loud = models.CharField('Reacts to loud sounds', max_length=10, choices=YN_CHOICES, null=True)
+    watches = models.CharField('Watches you as you move', max_length=10, choices=YN_CHOICES, null=True)
+    toy = models.CharField('Looks at a toy for several seconds', max_length=10, choices=YN_CHOICES, null=True)
+    head = models.CharField('Holds head up when on tummy', max_length=10, choices=YN_CHOICES, null=True)
+    move = models.CharField('Move both arms and both legs', max_length=10, choices=YN_CHOICES, null=True)
+    hands = models.CharField('Opens hands briefly', max_length=10, choices=YN_CHOICES, null=True)
+
+
+    def __str__(self):
+       return str(self.user)
+    
 
 class Doctor(models.Model):
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)

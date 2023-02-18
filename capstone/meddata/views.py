@@ -1,15 +1,33 @@
 from django.shortcuts import render, redirect
 from django.views.generic import DetailView
 from django.contrib import messages
-from .models import Profile, Doctor
-from .forms import DoctorForm
+from .models import Profile, Doctor, Milestone
+from .forms import DoctorForm, MilestoneForm
 from django.http import HttpResponseRedirect
 
 # Create your views here.
+def add_milestone(request):
+    submitted = False
+    if request.method == "POST":
+        form = MilestoneForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/add_milestone?submitted=True')
+    else:
+        form = MilestoneForm
+        if 'submitted' in request.GET:
+            submitted = True
+    
+    return render (request, 'add_milestone.html', {"form":form, 'submitted':submitted})
 
+def milestone(request):
+    if request.user.is_authenticated:
+        milestone_list = Milestone.objects.filter(user=request.user)
+    return render(request, 'milestone.html', {'miestone_list': milestone_list})
 
 def doctor(request):
-    doctor_list = Doctor.objects.all()
+    if request.user.is_authenticated:
+        doctor_list = Doctor.objects.filter(user=request.user)
     return render(request, 'doctor.html', {'doctor_list': doctor_list})
 
 
