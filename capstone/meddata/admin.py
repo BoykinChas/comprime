@@ -1,11 +1,12 @@
 from django.contrib import admin
 from django.contrib.auth.models import User
-from .models import Profile, Doctor, Milestone
+from .models import Profile, Doctor, Milestone, Notes
 
 
 # Register your models here.
 admin.site.register(Doctor)
 admin.site.register(Milestone)
+admin.site.register(Notes)
 
 
 # Add Profile info with user info

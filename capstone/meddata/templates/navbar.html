@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark" data-bs-theme="dark">
   <div class="container-fluid">
     <ul class="navbar-nav mb-2m b-lg-0">
-    <a class="navbar-brand" href="{% url 'home' %}">C</a>
+    <a class="navbar-brand" href="{% url 'home' %}">Stepping Stone</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -25,9 +25,23 @@
           {% endif %} -->
         {% if user.is_authenticated %}
         <ul class="navbar-nav mb-2m b-lg-0">
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="{% url 'profile' request.user.id %}">Profile</a>
+        </li> -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="{% url 'profile' request.user.id %}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Profile
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'milestone' %}">Milestone Summary</a></li>
+            <li><a class="dropdown-item" href="{% url 'doctor' %}">Doctor's</a></li>
+            <li><a class="dropdown-item" href="{% url 'notes' %}">Notes</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+            <li><a class="dropdown-item" href="{% url 'profile' request.user.id %}">Settings</a></li>
+          </ul>
         </li>
+
         <ul class="navbar-nav mb-2m b-lg-0">
           <li class="nav-item">
             <a class="nav-link" href="{% url 'add_milestone' %}">Milestones Checklist</a>
@@ -36,6 +50,10 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'add_doctor' %}">Add Specailist</a>
           </li>
+          <ul class="navbar-nav mb-2m b-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'notes' %}">Notes</a>
+            </li>
         {% endif %}
         </li>
       </ul>

@@ -6,8 +6,43 @@
 
 
 <div class="shadow p-4 mb-5 bg-body rounded">
-<img src="{% static 'images/logo.jpg' %}" class="img-fluid" alt="...">
-<br/><br/>
+  <style>
+    .align-items-center {
+      -ms-flex-align: center!important;
+      align-items: center!important;
+    }
+    .d-flex {
+      display: -ms-flexbox!important;
+      display: flex!important;
+    }
+        </style>
+      </head>
+      <body>
+        <section class="section mt-5">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6">
+                <div>
+                  <img alt="Web Studio" class="img-fluid" src="{% static 'images/logo.jpg' %}" />
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-5 ml-auto d-flex align-items-center mt-4 mt-md-0">
+                <div>
+                  <h4>A comprehensive online platform that organizes your child's milestones, 
+                    medical history, and tracks doctor visits can be a game-changer for busy parents. 
+                    The site offers an easy-to-use interface to input and store critical information 
+                    such as immunization records, growth charts, developmental milestones, and medical notes.
+                    With this site, parents can have peace of mind knowing that all of their child's health 
+                    information is easily accessible and up-to-date, ensuring that their child receives 
+                    the best possible care.</h4>
+                
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <br/>
+        <br/>
 
   {% if user.is_authenticated %}
     <a href="{% url 'logout' %}" class="btn btn-dark">Logout</a>
@@ -17,4 +52,6 @@
     {% endif %}
 
 </div>
+
+
 {% endblock %}

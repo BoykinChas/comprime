@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<h2>Notes</h2>
+<br/>
+<ul>
+{% for notes in notes_list %}
+
+<div class="shadow p-4 mb-5 bg-body rounded">
+
+  <li>{{ notes.title }}<br/> 
+    (( note.body ))</li>
+  
+
+</div>
+
+{% endfor %}
+</ul>
+{% endblock %}

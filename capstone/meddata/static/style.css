@@ -1,0 +1,21 @@
+
+/* :root {
+
+    --text-color: #001021;
+    --accent-color: #9883e5;
+  } */
+
+.carousel-item {
+
+    padding: 200px;
+}
+.carousel-caption {
+    
+    padding: 250px 100px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }

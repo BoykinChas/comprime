@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
-from django.views.generic import DetailView
+from django.views.generic import ListView, DetailView
 from django.contrib import messages
-from .models import Profile, Doctor, Milestone
+from .models import Profile, Doctor, Milestone, Notes
 from .forms import DoctorForm, MilestoneForm
 from django.http import HttpResponseRedirect
 
@@ -23,7 +23,7 @@ def add_milestone(request):
 def milestone(request):
     if request.user.is_authenticated:
         milestone_list = Milestone.objects.filter(user=request.user)
-    return render(request, 'milestone.html', {'miestone_list': milestone_list})
+    return render(request, 'milestone.html', {'milestone_list': milestone_list})
 
 def doctor(request):
     if request.user.is_authenticated:
@@ -44,6 +44,10 @@ def add_doctor(request):
             submitted = True
 
     return render (request, 'add_doctor.html', {"form":form, 'submitted':submitted})
+
+class Notes(ListView):
+    model = Notes
+    template_name = 'notes.html'
 
 class ProfilePage(DetailView):
     model = Profile
